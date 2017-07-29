@@ -45,7 +45,7 @@
         }
         #site-container {
             background: #fff;
-            overflow:hidden;
+            overflow: hidden;
             max-width: 1200px;
             box-shadow: 1px 1px 3px 1px grey;
         }
@@ -104,9 +104,54 @@
             font-weight: 800;
             
         }
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          font-family: 'Open Sans', sans-serif;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+          font-family: 'Open Sans', sans-serif;
+        }
+        :-ms-input-placeholder { /* IE 10+ */
+          font-family: 'Open Sans', sans-serif;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+          font-family: 'Open Sans', sans-serif;
+        }
+        input[type=submit] {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #E3572A;
+            color: #fff;
+            border:0;
+            transition: all ease-in-out .2s;
+        }
+        input[type=submit]:hover {
+            cursor:pointer;
+            background-color:#ff7649;
+        }
     </style>
 </head>
 <body>
+   <div id="pop-out" style="width:100%;height:100%; position:fixed; top:0; left:0;background-color: rgba(26,77,147,0.8); z-index:5;">
+      <div id="x-pop-out" style="position:absolute; top:10px; left: 10px;">
+          x
+      </div>
+       <div id="pop-out-box" style="background-color:white;position:absolute; top:15%; left: 25%; padding-bottom:2em;width:50%;">
+          <div id="pop-out-header" style="width:100%;background-color:rgb(26,77,147);margin-bottom:2em;padding:1em;">
+              <h2 style="color:white; margin: 0; text-align:center;text-transform:uppercase; font-weight: 700; letter-spacing: 3px;">360matrix // Learn More</h2>
+          </div>
+           <form style="max-width:50%; float:left;">
+               <input placeholder="Your Name" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <input placeholder="Practice Name" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <input placeholder="Phone Number" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <input placeholder="Practice Email" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text"> 
+               <input type="submit" style="font-size:2em;float:left;clear:left; width:450px;margin-left:2em;padding:.3em;text-transform:uppercase">
+           </form>
+           <div id="sue" style="text-align:center;float:right;width:45%;">
+               <img src="sue.png" style="border-radius:2px; width:40%"/>
+               <h3 style="margin: 28px;">Hi, I'm Sue!</h3>
+               <p style="margin: 0 25px 0;"><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl nunc, suscipit at dolor vehicula, dapibus feugiat nisl.</em></p>
+           </div>
+       </div>
+   </div>
     <div id="site-container" style="">
         <section style="text-align:center;">
             <img src="360Matrix_centered.png" />
@@ -117,23 +162,8 @@
                     The solution you've been asking for...
                 </h1>
             </div>
-    <!--
-            <div class="intro-form-wrapper" style="float:left; text-align:center;max-width:50%;background-color:rgba(255,255,255,0.3)">
-                <h3>
-                    Claim your spot in line
-                </h3>
-                <form>
-                    <input placeholder="Your Name" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
-                    <input placeholder="Practice Name" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
-                    <input placeholder="Phone Number" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
-                    <input placeholder="Practice Email" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
-                </form>
-            </div>
-    -->
         </section>
-           <section>
-
-           </section>
+        <section>
             <ul class="features-list">
                 <li>
                     <h2><span class="opaque">Staff Roles</span></h2>
@@ -149,7 +179,7 @@
                 </li>
             </ul>
             <p class="announcement">Take it to the next level with 360 Performance coaching.</p>
-            <div id="square"></div>
+        </section>
         <section style="background-color: #1A4D93; color: white; padding: 3em 0 3em 0;">
            <div class="text-and-button" style="max-width:90%; margin:2em auto;overflow:hidden;">
                 <h3 style="float:left; max-width:70%; font-size:3em;margin:0;">Want to feel the impact?</h3>
@@ -158,4 +188,17 @@
         </section>
     </div>
 </body>
+    <!--
+            <div class="intro-form-wrapper" style="float:left; text-align:center;max-width:50%;background-color:rgba(255,255,255,0.3)">
+                <h3>
+                    Claim your spot in line
+                </h3>
+                <form>
+                    <input placeholder="Your Name" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
+                    <input placeholder="Practice Name" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
+                    <input placeholder="Phone Number" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
+                    <input placeholder="Practice Email" style="width:80%;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;" type="text" />
+                </form>
+            </div>
+    -->
 </html>
