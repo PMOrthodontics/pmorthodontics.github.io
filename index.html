@@ -49,6 +49,11 @@
             max-width: 1200px;
             box-shadow: 1px 1px 3px 1px grey;
         }
+        #headline-wrapper {
+            margin-left: 100px;
+            max-width:40%;
+            float:left;
+        }
         #headline:after {
             content: "";
             background-color: #E3572A;
@@ -84,6 +89,7 @@
         }
         .opaque {
             background-color: white;
+            color: #1A4D93;
             padding:-5px;
             vertical-align: middle;
             position:relative;
@@ -93,7 +99,6 @@
             margin-left: 3.7em; /* (1.5 + 1) * 2.5/1.8 + a lil bit more for the border */
             font-size: 2em;
             letter-spacing: 1px;
-            color: #1A4D93;
             margin-right:5%;
         }
         .announcement {
@@ -152,6 +157,35 @@
             cursor:pointer;
             background-color:#ff7649;
         }
+        .features-list h2 {
+            font-size: 32px;
+        }
+        .features-list li p {
+            font-size: 18px!important;
+        }
+        .horizontal {
+            padding: 0 40px 0;
+            margin: 4em auto 4em;
+        }
+        .horizontal li {
+            list-style-type:none;
+            display:inline-block;
+            margin: 0 1.5% 0;
+            width: 30%;
+            text-align: center;
+        }
+        .horizontal li i {
+            font-size: 3em;
+            color: #1A4D93;
+        }
+        .horizontal li h3 {
+            color: #1A4D93;
+        }
+        @media screen and (max-width: 1162px) {
+            #headline-wrapper {
+                max-width:60%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -163,11 +197,17 @@
           <div id="pop-out-header" style="width:100%;background-color:rgb(26,77,147);margin-bottom:2em;padding:1em;">
               <h2 style="color:white; margin: 0; text-align:center;text-transform:uppercase; font-weight: 700; letter-spacing: 3px;">360matrix // Learn More</h2>
           </div>
-           <form style="max-width:50%; float:left;">
-               <input placeholder="Your Name" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
-               <input placeholder="Practice Name" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
-               <input placeholder="Phone Number" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
-               <input placeholder="Practice Email" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text"> 
+           <form id="pop-out-form" style="max-width:50%; float:left;">
+               <input name="name" placeholder="Your Name" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <input name="bizName" placeholder="Practice Name" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <input name="phone" placeholder="Phone Number" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <input name="email" placeholder="Practice Email" style="width:450px;margin:auto;font-size:2em;margin-bottom:15px;padding:.5em;float:left;clear:left;margin-right:1em;margin-left:2em" type="text" />
+               <div style="width:450px;margin:auto;font-size:1em;margin-bottom:15px;float:left;clear:left;margin-right:2em;margin-left:4em">
+                   <input type="checkbox" name="contact-method" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm local time)
+               </div>
+              <div style="width:450px;margin:auto;font-size:1em;margin-bottom:15px;float:left;clear:left;margin-right:2em;margin-left:4em">
+                   <input type="checkbox" name="contact-method" value="YCBM"><span style="font-size:1rem;">I want to to book a time on Sue's calendar</span>
+               </div>
                <input type="submit" style="font-size:2em;float:left;clear:left; width:450px;margin-left:2em;padding:.3em;text-transform:uppercase">
            </form>
            <div id="sue" style="text-align:center;float:right;width:45%;">
@@ -178,32 +218,55 @@
        </div>
    </div>
     <div id="site-container" style="">
-        <section style="text-align:center;">
-            <img src="logo.png" style="max-width:500px;"/>
+        <section>
+            <img src="logo.png" style="max-width:350px;"/>
+<!--            <a class="learn-more" style="padding: 20px 50px 20px 50px; margin-right: 15px;font-size: 2em;;float:right; text-transform:uppercase; font-weight:bold; letter-spacing: 1px; border-radius: 2px;max-width:30%;color:white;text-decoration:none!important;">Learn More</a>-->
         </section>
-        <section style="background-color: #1A4D93; color: white; padding: 6em 0 6em 0;overflow:hidden;">
-            <div class="wrapper" style="margin-left: 100px;max-width:40%;float:left;">
+        <section style="background-color: #1A4D93; color: white; padding: 6em 0 6em 0;overflow:hidden;background:url(flipped.jpg);background-size:contain;">
+            <div id="headline-wrapper">
                 <h1 id="headline" style="text-transform:uppercase; font-weight: 800; letter-spacing: 3px;line-height: 1.2em; font-size: 3.7em; margin-top: 0; margin-bottom:0;">
                     The solution you've been asking for...
                 </h1>
             </div>
         </section>
         <section>
+           <p class="announcement" style="max-width: 90%;text-align: center;width: 100%;margin: auto;margin-top: 1.5em; font-weight:700;">Your Practice Management Problems <em style="text-decoration:underline;">Solved</em></p>
             <ul class="features-list">
                 <li>
-                    <h2><span class="opaque">Staff Roles</span></h2>
-                    <p>Key staff roles and associated tasks are defined and can be customized for your practice. Detailed software instructions for Cloud9, Sophin, Ortho 2 and OrthoTrac included.</p>
+                    <h2><span class="opaque">Employee Turnover</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
                 <li>
-                    <h2><span class="opaque">Tasks and Protocols</span></h2>
-                    <p>Key staff roles and associated tasks are defined and can be customized for your practice. Detailed software instructions for Cloud9, Sophin, Ortho 2 and OrthoTrac included.</p>
+                    <h2><span class="opaque">Employee Training</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
                 <li>
-                    <h2><span class="opaque">Oversight and Accountability</span></h2>
-                    <p>Key staff roles and associated tasks are defined and can be customized for your practice. Detailed software instructions for Cloud9, Sophin, Ortho 2 and OrthoTrac included.</p>
+                    <h2><span class="opaque">Task Management and Accountability</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
             </ul>
-            <p class="announcement">Take it to the next level with 360 Performance coaching.</p>
+<!--            <p class="announcement">Take it to the next level with 360 Performance coaching.</p>-->
+        </section>
+        <section>
+           <p class="announcement" style="max-width: 90%;text-align: center;width: 100%;margin: auto;margin-top: 1.5em; font-weight:700;">How does it work?</p>
+           <ul class="horizontal">
+               <li>
+                   <img />
+                   <i class="fa fa-users" aria-hidden="true"></i>
+                   <h3>Staff Roles</h3>
+                   <p>Pellentesque rhoncus pharetra tempus. Praesent ut lorem malesuada, lobortis elit non, hendrerit augue. Sed non massa at tellus feugiat semper.</p>
+               </li>
+               <li>
+                   <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                   <h3>Tasks and Protocols</h3>
+                   <p>Pellentesque rhoncus pharetra tempus. Praesent ut lorem malesuada, lobortis elit non, hendrerit augue. Sed non massa at tellus feugiat semper.</p>
+               </li>
+               <li>
+                   <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                   <h3>Live Accountability</h3>
+                   <p>Pellentesque rhoncus pharetra tempus. Praesent ut lorem malesuada, lobortis elit non, hendrerit augue. Sed non massa at tellus feugiat semper.</p>
+               </li>
+           </ul>
         </section>
         <section style="background-color: #1A4D93; color: white; padding: 3em 0 3em 0;">
            <div class="text-and-button" style="max-width:90%; margin:2em auto;overflow:hidden;">
@@ -212,7 +275,10 @@
             </div>
         </section>
     </div>
-    <script type="text/javascript">
+    <script type="text/javascript"> // If you wonder why, it's because I am anti-loading frameworks, like jQuery
+        
+        // Pop Out
+        
         var popout = document.querySelector('#pop-out');
         var learnButtons = document.querySelectorAll(".learn-more");
         var xPopout = document.querySelector('#x-pop-out');
@@ -238,6 +304,38 @@
         learnButtons.forEach(function(button) {
             button.addEventListener('click', openPopout)
         });
+        
+        // Handle Form Submit
+
+        var box = document.querySelector('#pop-out-box');
+        var header = box.querySelector('h2');
+        var form = box.querySelector('#pop-out-form');
+        var submit = form.querySelector('input[type=submit]');
+        
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            var name = e.target['name'];
+            var bizName = e.target['bizName'];
+            var phone = e.target['phone'];
+            var email = e.target['email'];
+            var contactMethods = e.target['contact-method'];
+            var contactMethod = null;
+            for (var i = 0; i < contactMethods.length; i++) {
+              if (contactMethods[i].checked === true) {
+                contactMethod = contactMethods[i].value;
+              };  
+            };
+            // TODO: post form to server
+            
+            // TODO: finish design thank you pages based on contactmethod
+            form.style.display = 'none';
+            header.textContent = 'Thank you!';
+            //contactMethod === 'Sue' ? : ;
+            
+        };
+        
+        form.addEventListener('submit', handleFormSubmit)
+        
     </script>
 </body>
 </html>
