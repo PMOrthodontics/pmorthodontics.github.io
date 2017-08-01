@@ -65,7 +65,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-top:auto;
-            overflow: scroll;
+            overflow: hidden;
             padding-bottom:2em;
             width:950px;
             margin-left:auto;
@@ -583,10 +583,7 @@
     <script type="text/javascript"> // If you wonder why, it's because I am anti-loading frameworks (i.e. jQuery)
         (function() {
             
-            // after page loads stuff ---------------------
-            
-//            alert(navigator);
-//            alert(navigator.userAgent);
+            // Device Specifc Adjustments ---------------------
             
             // Detect if mobile
             var isMobile = null;
@@ -596,9 +593,14 @@
                 isMobile = false;
             }
             
+            
+            // vertically center the popout box
+            adjustPopout();
+            
             // adjust text onload
             adjustText();
 
+            
             // Pop Out -------------------------------------
 
             var popout = document.querySelector('#pop-out');
@@ -681,6 +683,24 @@
             };
 
             window.addEventListener('resize', adjustText);
+            
+            // Adjust Popout --------------------------------------
+            
+            function adjustPopout(e) {
+                var popoutBox = document.querySelector('#pop-out-box');
+                var popHeight = popoutBox.offsetHeight;
+                var windowHeight = window.innerHeight;
+                if (windowHeight > popHeight) {                
+                    var margin = (windowHeight - popHeight) / 2;
+                    popoutBox.style.marginTop = margin + 'px';
+                    popoutBox.style.overflow = 'hidden';
+                } else {
+                  popoutBox.style.overflow = 'scroll'; 
+                  popoutBox.style.marginTop = '0px'
+                } 
+            }
+            
+            window.addEventListener('resize', adjustPopout);
         }());
     </script>
 </body>
