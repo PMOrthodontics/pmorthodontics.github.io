@@ -216,9 +216,46 @@
             margin-top: 1.5em; 
             font-weight:700;
         }
+        .text-and-button {
+            max-width:90%;
+            margin:2em auto;
+            overflow:hidden;
+        }
+        .text-and-button h3 {
+            float:left;
+            max-width:70%;
+            font-size:3em;
+            margin:0;
+        }        
+        .text-and-button a {
+            padding: 20px 50px 20px 50px;
+            margin-right: 15px;
+            font-size: 2em;
+            float:right;
+            text-transform:uppercase;
+            font-weight:bold;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            max-width:30%;
+            color:white;
+            text-decoration:none!important;
+        }
+        #cta {
+            background-color: #1A4D93;
+            color: white;
+            padding: 3em 0 3em 0;
+        }
         @media screen and (max-width: 1213px) {
             #headline-wrapper {
                 max-width:50%;
+            }
+        }
+        @media screen and (max-width: 1196px) {
+            .text-and-button h3 {
+                font-size: 2.5em;
+            }
+            .text-and-button a {
+                font-size: 1.5em;
             }
         }
         @media screen and (max-width: 1162px) {
@@ -230,6 +267,34 @@
             }
             .logo {
                 max-width:250px;
+            }
+        }
+        @media screen and (max-width: 1003px) {
+            .text-and-button a {
+                padding: 20px 40px 20px 40px
+            }
+        }
+        @media screen and (max-width: 928px) {
+            ul.horizontal li {
+                width: 80%;
+                margin-left: 10%;
+                margin-bottom: 2em;
+            }
+            .text-and-button {
+                text-align: center;
+                overflow:inherit;
+            }
+            #cta {
+                padding: 2em 0 2em 0;
+            }
+            .text-and-button h3 {
+                float:none;
+                width:100%;
+                margin-bottom: 1.5em;
+                max-width: none;
+            }
+            .text-and-button a {
+                float:none;
             }
         }
         @media screen and (max-width: 815px) {
@@ -247,6 +312,11 @@
             #headline:after {
                 margin-left:auto;
                 margin-right:auto;
+            }
+            ul.horizontal li {
+                width: 90%;
+                margin-left: 5%;
+                margin-bottom: 2em;
             }
         }
         @media screen and (max-width: 728px) {
@@ -270,6 +340,9 @@
                 margin-left: 2em;
                 font-size: 18px!important;
             }
+            ul.horizontal li h3 {
+                font-size:1.3em;
+            }
         }
         @media screen and (max-width: 600px) {
             #headline {
@@ -277,6 +350,14 @@
             }
             .header {
                 font-size: 1.7em;
+            }
+            .text-and-button h3 {
+                font-size: 2em;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .text-and-button a {
+                font-size: 1em;
             }
         }
     </style>
@@ -341,7 +422,7 @@
 <!--            <p class="announcement">Take it to the next level with 360 Performance coaching.</p>-->
         </section>
         <section>
-           <p class="announcement" style="max-width: 90%;text-align: center;width: 100%;margin: auto;margin-top: 1.5em; font-weight:700;">How does it work?</p>
+           <h2 class="header">How does it work?</h2>
            <ul class="horizontal">
                <li>
                    <img />
@@ -361,10 +442,10 @@
                </li>
            </ul>
         </section>
-        <section style="background-color: #1A4D93; color: white; padding: 3em 0 3em 0;">
-           <div class="text-and-button" style="max-width:90%; margin:2em auto;overflow:hidden;">
-                <h3 style="float:left; max-width:70%; font-size:3em;margin:0;">Want to feel the impact?</h3>
-                <a href="#" class="learn-more" style="padding: 20px 50px 20px 50px; margin-right: 15px;font-size: 2em;;float:right; text-transform:uppercase; font-weight:bold; letter-spacing: 1px; border-radius: 2px;max-width:30%;color:white;text-decoration:none!important;">Learn More</a>
+        <section id="cta" style="">
+           <div class="text-and-button" >
+                <h3>Want to feel the impact?</h3>
+                <a href="#" class="learn-more">Learn More</a>
             </div>
         </section>
     </div>
