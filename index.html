@@ -452,97 +452,103 @@
     </div>
     <script type="text/javascript"> // If you wonder why, it's because I am anti-loading frameworks, like jQuery
         (function() {
-        // Detect if mobile
-        if (/Android|Mobile|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-            alert('mobile');
-        } else {
-            alert('not mobile');
-        }
-        // adjust text onload
-        adjustText();
-        
-        // Pop Out -----------------
-        
-        var popout = document.querySelector('#pop-out');
-        var learnButtons = document.querySelectorAll(".learn-more");
-        var xPopout = document.querySelector('#x-pop-out');
-        
-        function openPopout(e) {
-            e.preventDefault();
-            popout.style.opacity = '1';
-            popout.style.zIndex = '5';
-        };
-        
-        function closePopout(e) {
-            e.preventDefault();
-            popout.style.opacity = '0';
-            popout.style.zIndex = '-999';
-        }
-        
-        xPopout.addEventListener('click', closePopout)
-        
-        window.addEventListener('keyup', function(e) {
-            if (e.key === 'Escape' && popout.style.opacity != 0) closePopout(e);
-        });
-        
-        learnButtons.forEach(function(button) {
-            button.addEventListener('click', openPopout)
-        });
-        
-        // Handle Form Submit -----------------
-
-        var box = document.querySelector('#pop-out-box');
-        var header = box.querySelector('h2');
-        var form = box.querySelector('#pop-out-form');
-        var submit = form.querySelector('input[type=submit]');
-        
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            var name = e.target['name'];
-            var bizName = e.target['bizName'];
-            var phone = e.target['phone'];
-            var email = e.target['email'];
-            var contactMethods = e.target['contact-method'];
-            var contactMethod = null;
-            for (var i = 0; i < contactMethods.length; i++) {
-              if (contactMethods[i].checked === true) {
-                contactMethod = contactMethods[i].value;
-              };  
-            };
-            // TODO: post form to server
             
-            // TODO: finish design thank you pages based on contactmethod
-            form.style.display = 'none';
-            header.textContent = 'Thank you!';
-            //contactMethod === 'Sue' ? : ;
-            
-        };
-        
-        form.addEventListener('submit', handleFormSubmit);
-        
-        // Responsive Text Switch ------------------
-        function adjustText(e) {
-            var turnover = document.querySelector('.turnover');
-            var training = document.querySelector('.training');
-            var account = document.querySelector('.accountability');
-            if (window.innerWidth >= 556) {
-                account.textContent = 'Task Management and Accountability';
-                training.textContent = 'Employee Training';
-                turnover.textContent = 'Employee Turnover';
+            // after page loads stuff ---------------------
+            alert(navigator);
+            alert(navigator.userAgent);
+            // Detect if mobile
+            var isMobile = null;
+            if (/Android|Mobile|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                isMobile = true;
+            } else {
+                isMobile = false;
             }
-            else if (window.innerWidth < 556 && window.innerWidth >= 374) {
-                account.textContent = 'Employee Accountability';
-                training.textContent = 'Employee Training';
-                turnover.textContent = 'Employee Turnover';
-            } 
-            else if (window.innerWidth < 374) {
-                account.textContent = 'Accountability';
-                training.textContent = 'Training';
-                turnover.textContent = 'Turnover';
+            
+            // adjust text onload
+            adjustText();
+
+            // Pop Out -----------------
+
+            var popout = document.querySelector('#pop-out');
+            var learnButtons = document.querySelectorAll(".learn-more");
+            var xPopout = document.querySelector('#x-pop-out');
+
+            function openPopout(e) {
+                e.preventDefault();
+                popout.style.opacity = '1';
+                popout.style.zIndex = '5';
             };
-        };
-        
-        window.addEventListener('resize', adjustText);
+
+            function closePopout(e) {
+                e.preventDefault();
+                popout.style.opacity = '0';
+                popout.style.zIndex = '-999';
+            }
+
+            xPopout.addEventListener('click', closePopout)
+
+            window.addEventListener('keyup', function(e) {
+                if (e.key === 'Escape' && popout.style.opacity != 0) closePopout(e);
+            });
+
+            learnButtons.forEach(function(button) {
+                button.addEventListener('click', openPopout)
+            });
+
+            // Handle Form Submit -----------------
+
+            var box = document.querySelector('#pop-out-box');
+            var header = box.querySelector('h2');
+            var form = box.querySelector('#pop-out-form');
+            var submit = form.querySelector('input[type=submit]');
+
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                var name = e.target['name'];
+                var bizName = e.target['bizName'];
+                var phone = e.target['phone'];
+                var email = e.target['email'];
+                var contactMethods = e.target['contact-method'];
+                var contactMethod = null;
+                for (var i = 0; i < contactMethods.length; i++) {
+                  if (contactMethods[i].checked === true) {
+                    contactMethod = contactMethods[i].value;
+                  };  
+                };
+                // TODO: post form to server
+
+                // TODO: finish design thank you pages based on contactmethod
+                form.style.display = 'none';
+                header.textContent = 'Thank you!';
+                //contactMethod === 'Sue' ? : ;
+
+            };
+
+            form.addEventListener('submit', handleFormSubmit);
+
+            // Responsive Text Switch ------------------
+            function adjustText(e) {
+                var turnover = document.querySelector('.turnover');
+                var training = document.querySelector('.training');
+                var account = document.querySelector('.accountability');
+                if (window.innerWidth >= 556) {
+                    account.textContent = 'Task Management and Accountability';
+                    training.textContent = 'Employee Training';
+                    turnover.textContent = 'Employee Turnover';
+                }
+                else if (window.innerWidth < 556 && window.innerWidth >= 374) {
+                    account.textContent = 'Employee Accountability';
+                    training.textContent = 'Employee Training';
+                    turnover.textContent = 'Employee Turnover';
+                } 
+                else if (window.innerWidth < 374) {
+                    account.textContent = 'Accountability';
+                    training.textContent = 'Training';
+                    turnover.textContent = 'Turnover';
+                };
+            };
+
+            window.addEventListener('resize', adjustText);
         }());
     </script>
 </body>
