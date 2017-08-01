@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 52.7.137.160 -->
 <html>
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -450,7 +451,13 @@
         </section>
     </div>
     <script type="text/javascript"> // If you wonder why, it's because I am anti-loading frameworks, like jQuery
-        
+        (function() {
+        // Detect if mobile
+        if (/Android|Mobile|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            alert('mobile');
+        } else {
+            alert('not mobile');
+        }
         // adjust text onload
         adjustText();
         
@@ -535,7 +542,8 @@
             };
         };
         
-        window.addEventListener('resize', adjustText)
+        window.addEventListener('resize', adjustText);
+        }());
     </script>
 </body>
 </html>
