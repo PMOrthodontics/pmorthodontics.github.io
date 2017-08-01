@@ -3,6 +3,7 @@
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1">
     <style>
         html {
             box-sizing: border-box;
@@ -49,10 +50,28 @@
             max-width: 1200px;
             box-shadow: 1px 1px 3px 1px grey;
         }
+        #top {
+            background-color: #1A4D93; 
+            color: white; 
+            padding: 6em 0 6em 0;
+            overflow:hidden;
+            background:url(flipped.jpg);
+            background-size:cover;
+            background-position:right top
+        }
         #headline-wrapper {
             margin-left: 100px;
             max-width:40%;
             float:left;
+        }
+        #headline {
+            text-transform:uppercase;
+            font-weight: 800; 
+            letter-spacing: 3px;
+            line-height: 1.2em; 
+            font-size: 3.7em; 
+            margin-top: 0; 
+            margin-bottom:0;
         }
         #headline:after {
             content: "";
@@ -95,6 +114,7 @@
             position:relative;
             z-index: 2;
         }
+        
         ul.features-list li p {
             margin-left: 3.7em; /* (1.5 + 1) * 2.5/1.8 + a lil bit more for the border */
             font-size: 2em;
@@ -161,7 +181,7 @@
             font-size: 32px;
         }
         .features-list li p {
-            font-size: 18px!important;
+            font-size: 20px!important;
         }
         .horizontal {
             padding: 0 40px 0;
@@ -181,9 +201,82 @@
         .horizontal li h3 {
             color: #1A4D93;
         }
+        .logo {
+            max-width:350px;
+        }
+        .header {
+            font-size: 2.8em;
+            color: #E3572A;
+            text-align: center;
+            font-weight: 800;
+            max-width: 90%;
+            text-align: center;
+            width: 100%;
+            margin: auto;
+            margin-top: 1.5em; 
+            font-weight:700;
+        }
+        @media screen and (max-width: 1213px) {
+            #headline-wrapper {
+                max-width:50%;
+            }
+        }
         @media screen and (max-width: 1162px) {
             #headline-wrapper {
                 max-width:60%;
+            }
+            .header {
+                font-size: 2.5em;
+            }
+            .logo {
+                max-width:250px;
+            }
+        }
+        @media screen and (max-width: 815px) {
+            ul.features-list li h2 {
+                font-size: 24px;
+            }
+            ul.features-list li h2:before {
+                padding-bottom: 1.6em;
+            }
+            #headline-wrapper {
+                max-width: 95%;
+                margin: 0 2.5% 0;
+                text-align: center;
+            }
+            #headline:after {
+                margin-left:auto;
+                margin-right:auto;
+            }
+        }
+        @media screen and (max-width: 728px) {
+            #headline {
+                font-size: 3em;
+            }
+            .header {
+                font-size: 2em;
+            }
+            #top {
+                padding: 4em 0 3em 0;
+            }
+            ul.features-list {
+                padding-left: 22px;
+                margin-top: -12px;
+            }
+            ul.features-list li {
+                margin-top: 3.3em;
+            }
+            ul.features-list li p {
+                margin-left: 2em;
+                font-size: 18px!important;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            #headline {
+                font-size: 2.5em;
+            }
+            .header {
+                font-size: 1.7em;
             }
         }
     </style>
@@ -218,30 +311,30 @@
        </div>
    </div>
     <div id="site-container" style="">
-        <section>
-            <img src="logo.png" style="max-width:350px;"/>
+        <section id="nav">
+            <img src="logo.png" class="logo">
 <!--            <a class="learn-more" style="padding: 20px 50px 20px 50px; margin-right: 15px;font-size: 2em;;float:right; text-transform:uppercase; font-weight:bold; letter-spacing: 1px; border-radius: 2px;max-width:30%;color:white;text-decoration:none!important;">Learn More</a>-->
         </section>
-        <section style="background-color: #1A4D93; color: white; padding: 6em 0 6em 0;overflow:hidden;background:url(flipped.jpg);background-size:contain;">
+        <section id="top">
             <div id="headline-wrapper">
-                <h1 id="headline" style="text-transform:uppercase; font-weight: 800; letter-spacing: 3px;line-height: 1.2em; font-size: 3.7em; margin-top: 0; margin-bottom:0;">
+                <h1 id="headline" style="">
                     The solution you've been asking for...
                 </h1>
             </div>
         </section>
-        <section>
-           <p class="announcement" style="max-width: 90%;text-align: center;width: 100%;margin: auto;margin-top: 1.5em; font-weight:700;">Your Practice Management Problems <em style="text-decoration:underline;">Solved</em></p>
+        <section id="middle">
+           <h2 class="header">Your Practice Management Problems <em style="text-decoration:underline;">Solved</em></h2>
             <ul class="features-list">
                 <li>
-                    <h2><span class="opaque">Employee Turnover</span></h2>
+                    <h2><span class="opaque turnover">Employee Turnover</span></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
                 <li>
-                    <h2><span class="opaque">Employee Training</span></h2>
+                    <h2><span class="opaque training">Employee Training</span></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
                 <li>
-                    <h2><span class="opaque">Task Management and Accountability</span></h2>
+                    <h2><span class="opaque accountability">Task Management and Accountability</span></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
             </ul>
@@ -277,7 +370,10 @@
     </div>
     <script type="text/javascript"> // If you wonder why, it's because I am anti-loading frameworks, like jQuery
         
-        // Pop Out
+        // adjust text onload
+        adjustText();
+        
+        // Pop Out -----------------
         
         var popout = document.querySelector('#pop-out');
         var learnButtons = document.querySelectorAll(".learn-more");
@@ -305,7 +401,7 @@
             button.addEventListener('click', openPopout)
         });
         
-        // Handle Form Submit
+        // Handle Form Submit -----------------
 
         var box = document.querySelector('#pop-out-box');
         var header = box.querySelector('h2');
@@ -334,8 +430,31 @@
             
         };
         
-        form.addEventListener('submit', handleFormSubmit)
+        form.addEventListener('submit', handleFormSubmit);
         
+        // Responsive Text Switch ------------------
+        function adjustText(e) {
+            var turnover = document.querySelector('.turnover');
+            var training = document.querySelector('.training');
+            var account = document.querySelector('.accountability');
+            if (window.innerWidth >= 556) {
+                account.textContent = 'Task Management and Accountability';
+                training.textContent = 'Employee Turnover';
+                turnover.textContent = 'Employee Turnover';
+            }
+            else if (window.innerWidth < 556 && window.innerWidth >= 374) {
+                account.textContent = 'Employee Accountability';
+                training.textContent = 'Employee Turnover';
+                turnover.textContent = 'Employee Turnover';
+            } 
+            else if (window.innerWidth < 374) {
+                account.textContent = 'Accountability';
+                training.textContent = 'Training';
+                turnover.textContent = 'Turnover';
+            };
+        };
+        
+        window.addEventListener('resize', adjustText)
     </script>
 </body>
 </html>
