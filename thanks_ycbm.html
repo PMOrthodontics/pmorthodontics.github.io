@@ -53,8 +53,7 @@
             left:0;
             background-color: rgba(26,77,147,0.8);
             z-index:5;
-            z-index: -999;
-            opacity:0;
+            opacity:1;
             -webkit-transition: all ease-in-out .5s;
             -moz-transition: all ease-in-out .5s;
             -o-transition: all ease-in-out .5s;
@@ -143,7 +142,7 @@
             box-shadow: 1px 1px 3px 1px grey;
         }
         #top {
-            background: #1A4D93; 
+            background-color: #1A4D93; 
             color: white; 
             padding: 6em 0 6em 0;
             overflow:hidden;
@@ -173,42 +172,6 @@
             width:40%;
             margin-top:.8em;
             display:block;
-        }
-        #headline-form {
-            position: relative;
-            left: 230px;
-            top: 40px;
-            width: 303px;
-            padding: 7px;
-            overflow:hidden;
-            border-radius: 2px;
-            background-color: rgba(255,255,255,0.3);
-        }
-        #headline-form input {
-            margin-bottom: 5px;
-        }
-        #headline-form input[type="text"] {
-            width: 100%;
-            font-size:1.5em;
-            padding:.5em;
-        }
-        #headline-form input[type="submit"] {
-            background-color: #E3572A;
-            width: 100%;
-            padding: 20px;
-            margin-bottom: 0;
-            text-decoration: none;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 1.5em;
-            -webkit-transition: all ease-in-out .2s;
-            -moz-transition: all ease-in-out .2s;
-            -o-transition: all ease-in-out .2s;
-            transition: all ease-in-out .2s;
-        }
-        #headline-form input[type="submit"]:hover {
-            cursor:pointer;
-            background-color:#ff7649;
         }
         ul.features-list li {
             list-style-type: none;
@@ -363,6 +326,22 @@
             color: white;
             padding: 3em 0 3em 0;
         }
+        .book-call {
+            background-color: #E3572A;
+            color: white;
+            padding:.5em;
+            text-transform:uppercase;
+            font-size:1.5em;
+            margin-top:2em;
+            -webkit-transition: all ease-in-out .2s;
+            -moz-transition: all ease-in-out .2s;
+            -o-transition: all ease-in-out .2s;
+            transition: all ease-in-out .2s;
+        }
+        .book-call:hover {
+            cursor:pointer;
+            background-color:#ff7649;
+        }
         @media screen and (max-width: 1213px) {
             #headline-wrapper {
                 max-width:50%;
@@ -463,9 +442,11 @@
                 left: 10px;
                 font-size: 1.5em;
             }
+/*
             #sue {
                 display:none;
             }
+*/
         }
         @media screen and (max-width: 728px) {
             #headline {
@@ -511,95 +492,66 @@
     </style>
 </head>
 <body>
-  
-   <!-- The Pop Out Form -->
    <div id="pop-out">
       <div id="x-pop-out">
           x
       </div>
-       <div id="pop-out-box">
+       <div id="pop-out-box" style="max-width:750px;">
           <div id="pop-out-header">
-              <h2>360matrix // Learn More</h2>
+              <h2>Thank You!</h2>
           </div>
-           <form id="pop-out-form" method="post" action="https://sync.appfluence.com/sync/handle_360_form">
+           <form id="pop-out-form" method="post" action="http://stage.appfluence.com/sync/handle_360_form" style="display:none;">
                <input name="name" placeholder="Your Name" type="text" />
                <input name="bizName" placeholder="Practice Name" style="" type="text" />
                <input name="phone" placeholder="Phone Number" type="text" />
                <input name="email" placeholder="Practice Email" type="text" />
-               <input name="formLocation" type="hidden" value="pop-out-form">
                <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm local time)
+                   <input type="checkbox" name="contactMethod" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm local time)
                </div>
               <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="YCBM"><span style="font-size:1rem;">I want to to book a time on Sue's calendar</span>
+                   <input type="checkbox" name="contactMethod" value="YCBM"><span style="font-size:1rem;">I want to to book a time on Sue's calendar</span>
                </div>
                <input type="submit">
            </form>
-           <div id="sue">
-               <img src="sue.png" />
-               <h3 style="margin: 28px;">Hi, I'm Sue!</h3>
-               <p style="margin: 0 25px 0;">Thank you so much for your interest in 360Matrix. I look forward to speaking with you soon to show you how it can take your practice to the next level.</p>
+           <div id="sue" style="width:100%;">
+               <img src="sue.png" style="max-width:150px;" />
+               <h3 style="margin: 28px;">Let's do this!</h3>
+               <p style="margin: 0 25px 0;max-width: 500px; width: 75%; margin:auto;">Thanks so much for your submission. Here is the link to my calendar.  If you have any questions, please reach out to me at <a href="mailto:suehanen@gmail.com">suehanen@gmail.com</a></p>
+               <p style="margin-top:2em;"><a class="book-call">Book Your Call</a></p>
            </div>
        </div>
    </div>
-   
-   <!-- The Actual Site -->
-    <div id="site-container">
+    <div id="site-container" style="">
         <section id="nav">
-            <img src="360logo.png" class="logo">
+            <img src="logo.png" class="logo">
+<!--            <a class="learn-more" style="padding: 20px 50px 20px 50px; margin-right: 15px;font-size: 2em;;float:right; text-transform:uppercase; font-weight:bold; letter-spacing: 1px; border-radius: 2px;max-width:30%;color:white;text-decoration:none!important;">Learn More</a>-->
         </section>
         <section id="top">
             <div id="headline-wrapper">
-                <h1 id="headline">
-                   clarity & Peace of mind for orthodontists.
+                <h1 id="headline" style="">
+                    The management solution you've been asking for...
                 </h1>
             </div>
-            <form id="headline-form" method="post" action="https://sync.appfluence.com/sync/handle_360_form">
-                <input name="name" type="text" placeholder="Your Name" required>
-                <input name="phone" type="text" placeholder="Your Phone" required>
-                <input name="email" type="text" placeholder="Your Email"  required>
-                <input name="formLocation" type="hidden" value="headline-form">
-                <input type="submit" value="Book A Demo">
-            </form>
         </section>
         <section id="middle">
-           <h2 class="header" style="text-transform:capitalize">Take Control of Your Practice</h2>
+           <h2 class="header" style="text-transform:capitalize">Now what you hope is getting done is <em style="text-decoration:underline;">actually</em> getting done</h2>
             <ul class="features-list">
                 <li>
-                    <h2><span class="opaque whats-done">Know What's Done and What Isn't</span></h2>
-                    <p>360Matrix clarifies team members' daily, weekly, and monthly responsibilities.  "How to" protocols promote organization and continuity. </p>
+                    <h2><span class="opaque accountability">Task Management and Accountability</span></h2>
+                    <p>Daily, weekly, and monthly responsibilities are organized along with alerts when tasks are not completed on time. "How to" protocols promote organization and continuity.</p>
                 </li>
                 <li>
-                    <h2><span class="opaque self-directed">Develop A Self-Directed Team</span></h2>
-                    <p>360Matrix outlines responsibilities and provides an opportunity for team members to enhance communication, share feedback, create synergy, and develop a sense of ownership.</p>
+                    <h2><span class="opaque turnover">Employee Turnover</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
                 <li>
-                    <h2><span class="opaque onboard">Easily Onboard New Team Members</span></h2>
-                    <p>Turnover is inevitable. 360Matrix enables new team members to learn exactly what they need to do to succeed in their role and outlines the necessary steps. </p>
+                    <h2><span class="opaque training">Employee Training</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum purus lorem, blandit sagittis tortor aliquam vel. Quisque id mauris elit. Aenean ac nisl cursus, auctor massa at, pretium ante.</p>
                 </li>
             </ul>
 <!--            <p class="announcement">Take it to the next level with 360 Performance coaching.</p>-->
         </section>
         <section>
-            <h2 class="header">360Matrix Provides</h2>
-            <ul class="horizontal">
-               <li>
-                   <img />
-                   <i class="fa fa-users" aria-hidden="true"></i>
-                   <h3>Organizational Structure</h3>
-                   <p>Team workflows are defined for your practice, providing a pathway and structure for team members to perform at the next level.</p>
-               </li>
-               <li>
-                   <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                   <h3>Team Success Plans</h3>
-                   <p>Your Team Success Plan includes instructions and protocols for every action in your office, streamlining day-to-day operations, cross-training, and collaboration.<!--Every action in your office is tracked. Detailed practice management software instructions and key-stroke guides are there to help.--></p>
-               </li>
-               <li>
-                   <i class="fa fa-crosshairs" aria-hidden="true"></i>
-                   <h3>Visibility & Accountability</h3>
-                   <p>Create accountability through visibility. Delegate responsibilities and track team performance.</p>
-               </li>
-           </ul>
            <h2 class="header">How does it work?</h2>
            <ul class="horizontal">
                <li>
@@ -616,13 +568,32 @@
                <li>
                    <i class="fa fa-desktop" aria-hidden="true"></i>
                    <h3>Software Specific</h3>
-                   <p>Tasks and protocols are customized to your practice management software providing step-by-step instructions for Cloud9, Dolphin, Edge, and OrthoTrac.</p>
+                   <p>Tasks and protocols are customized to your practice management software providing step-by-step instructions.</p>
                </li>
             </ul>
+            <h2 class="header" style="margin-top:15px;">Providing:</h2>
+            <ul class="horizontal">
+               <li>
+                   <img />
+                   <i class="fa fa-users" aria-hidden="true"></i>
+                   <h3>Staff Roles</h3>
+                   <p>Team roles are defined and customized for your practice.</p>
+               </li>
+               <li>
+                   <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                   <h3>Team Success Plan</h3>
+                   <p>Your Team Success Plan includes instructions and protocols for every key action in your office, streamlining the cross-training process.<!--Every action in your office is tracked. Detailed practice management software instructions and key-stroke guides are there to help.--></p>
+               </li>
+               <li>
+                   <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                   <h3>Live Accountability</h3>
+                   <p></p>
+               </li>
+           </ul>
         </section>
         <section id="cta" style="">
            <div class="text-and-button" >
-                <h3>Schedule a Demo Now</h3>
+                <h3>Want to feel the impact?</h3>
                 <a href="#" class="learn-more">Learn More</a>
             </div>
         </section>
@@ -646,19 +617,7 @@
             
             // adjust text onload
             adjustText();
-            
-            
-            // Headline Form Animation -----------------
-            
-            var headlineForm = document.querySelector('#headline-form');
-            
-            function showHeadlineForm(e) {
-            }
-            
-            window.addEventListener('scroll', showHeadlineForm)
-            document.addEventListener("DOMContentLoaded", function(e) {
-                setTimeout(showHeadlineForm, 1000);
-            });
+
             
             // Pop Out -------------------------------------
 
@@ -696,12 +655,10 @@
 
             function handleFormSubmit(e) {
                 //e.preventDefault();
-                
-                // This is just groundwork for form validation
-                var name = e.target['name'].value;
-                var bizName = e.target['bizName'].value;
-                var phone = e.target['phone'].value;
-                var email = e.target['email'].value;
+                var name = e.target['name'];
+                var bizName = e.target['bizName'];
+                var phone = e.target['phone'];
+                var email = e.target['email'];
                 var contactMethods = e.target['contact-method'];
                 var contactMethod = null;
                 for (var i = 0; i < contactMethods.length; i++) {
@@ -711,6 +668,11 @@
                 };
                 // TODO: post form to server
 
+                // TODO: finish design thank you pages based on contactmethod
+                form.style.display = 'none';
+                header.textContent = 'Thank you!';
+                //contactMethod === 'Sue' ? : ;
+
             };
 
             form.addEventListener('submit', handleFormSubmit);
@@ -718,23 +680,23 @@
             // Responsive Text Switch ------------------------------
             
             function adjustText(e) {
-                var whatsDone = document.querySelector('.whats-done');
-                var selfDirected = document.querySelector('.self-directed');
-                var onboard = document.querySelector('.onboard');
-                if (window.innerWidth >= 528) {
-                    whatsDone.textContent = "Know What's Done and What Isn't";
-                    selfDirected.textContent = 'Develop A Self-Directed Team';
-                    onboard.textContent = 'Easily Onboard New Team Members';
+                var turnover = document.querySelector('.turnover');
+                var training = document.querySelector('.training');
+                var account = document.querySelector('.accountability');
+                if (window.innerWidth >= 556) {
+                    account.textContent = 'Task Management and Accountability';
+                    training.textContent = 'Employee Training';
+                    turnover.textContent = 'Employee Turnover';
                 }
-                else if (window.innerWidth < 527 && window.innerWidth >= 374) {
-                    whatsDone.textContent = 'Know What\'s Done';
-                    selfDirected.textContent = 'A Self-Directed Team';
-                    onboard.textContent = 'Easily Onboard';
+                else if (window.innerWidth < 556 && window.innerWidth >= 374) {
+                    account.textContent = 'Employee Accountability';
+                    training.textContent = 'Employee Training';
+                    turnover.textContent = 'Employee Turnover';
                 } 
                 else if (window.innerWidth < 374) {
-                    whatsDone.textContent = 'Accountability';
-                    selfDirected.textContent = 'Teamwork';
-                    onboard.textContent = 'Onboarding';
+                    account.textContent = 'Accountability';
+                    training.textContent = 'Training';
+                    turnover.textContent = 'Turnover';
                 };
             };
 

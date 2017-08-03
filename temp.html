@@ -53,8 +53,7 @@
             left:0;
             background-color: rgba(26,77,147,0.8);
             z-index:5;
-            z-index: -999;
-            opacity:0;
+            opacity:1;
             -webkit-transition: all ease-in-out .5s;
             -moz-transition: all ease-in-out .5s;
             -o-transition: all ease-in-out .5s;
@@ -143,7 +142,7 @@
             box-shadow: 1px 1px 3px 1px grey;
         }
         #top {
-            background: #1A4D93; 
+            background-color: #1A4D93; 
             color: white; 
             padding: 6em 0 6em 0;
             overflow:hidden;
@@ -173,42 +172,6 @@
             width:40%;
             margin-top:.8em;
             display:block;
-        }
-        #headline-form {
-            position: relative;
-            left: 230px;
-            top: 40px;
-            width: 303px;
-            padding: 7px;
-            overflow:hidden;
-            border-radius: 2px;
-            background-color: rgba(255,255,255,0.3);
-        }
-        #headline-form input {
-            margin-bottom: 5px;
-        }
-        #headline-form input[type="text"] {
-            width: 100%;
-            font-size:1.5em;
-            padding:.5em;
-        }
-        #headline-form input[type="submit"] {
-            background-color: #E3572A;
-            width: 100%;
-            padding: 20px;
-            margin-bottom: 0;
-            text-decoration: none;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 1.5em;
-            -webkit-transition: all ease-in-out .2s;
-            -moz-transition: all ease-in-out .2s;
-            -o-transition: all ease-in-out .2s;
-            transition: all ease-in-out .2s;
-        }
-        #headline-form input[type="submit"]:hover {
-            cursor:pointer;
-            background-color:#ff7649;
         }
         ul.features-list li {
             list-style-type: none;
@@ -363,6 +326,22 @@
             color: white;
             padding: 3em 0 3em 0;
         }
+        .book-call {
+            background-color: #E3572A;
+            color: white;
+            padding:.5em;
+            text-transform:uppercase;
+            font-size:1.5em;
+            margin-top:2em;
+            -webkit-transition: all ease-in-out .2s;
+            -moz-transition: all ease-in-out .2s;
+            -o-transition: all ease-in-out .2s;
+            transition: all ease-in-out .2s;
+        }
+        .book-call:hover {
+            cursor:pointer;
+            background-color:#ff7649;
+        }
         @media screen and (max-width: 1213px) {
             #headline-wrapper {
                 max-width:50%;
@@ -511,42 +490,26 @@
     </style>
 </head>
 <body>
-  
-   <!-- The Pop Out Form -->
    <div id="pop-out">
       <div id="x-pop-out">
           x
       </div>
-       <div id="pop-out-box">
+       <div id="pop-out-box" style="max-width:750px;">
           <div id="pop-out-header">
-              <h2>360matrix // Learn More</h2>
+              <h2>Thank You!</h2>
           </div>
-           <form id="pop-out-form" method="post" action="https://sync.appfluence.com/sync/handle_360_form">
-               <input name="name" placeholder="Your Name" type="text" />
-               <input name="bizName" placeholder="Practice Name" style="" type="text" />
-               <input name="phone" placeholder="Phone Number" type="text" />
-               <input name="email" placeholder="Practice Email" type="text" />
-               <input name="formLocation" type="hidden" value="pop-out-form">
-               <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm local time)
-               </div>
-              <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="YCBM"><span style="font-size:1rem;">I want to to book a time on Sue's calendar</span>
-               </div>
-               <input type="submit">
-           </form>
-           <div id="sue">
-               <img src="sue.png" />
-               <h3 style="margin: 28px;">Hi, I'm Sue!</h3>
-               <p style="margin: 0 25px 0;">Thank you so much for your interest in 360Matrix. I look forward to speaking with you soon to show you how it can take your practice to the next level.</p>
+           <div id="sue" style="width:100%;">
+               <img src="sue.png" style="max-width:150px;"/>
+               <h3 style="margin: 28px;">Looking forward to working with you!</h3>
+               <p style="margin: 0 25px 0;max-width: 500px; width: 75%; margin:auto;">Thanks so much for your submission. I will reach out to you within the next 48 hours.  If you have any questions, please reach out to me at <a href="mailto:suehanen@gmail.com">suehanen@gmail.com</a>.</p>
+              <p style="margin-top:2em;"><a class="book-call">Book Your Call</a></p>
            </div>
        </div>
    </div>
-   
-   <!-- The Actual Site -->
-    <div id="site-container">
+    <div id="site-container" style="">
         <section id="nav">
-            <img src="360logo.png" class="logo">
+            <img src="logo.png" class="logo">
+<!--            <a class="learn-more" style="padding: 20px 50px 20px 50px; margin-right: 15px;font-size: 2em;;float:right; text-transform:uppercase; font-weight:bold; letter-spacing: 1px; border-radius: 2px;max-width:30%;color:white;text-decoration:none!important;">Learn More</a>-->
         </section>
         <section id="top">
             <div id="headline-wrapper">
@@ -554,13 +517,6 @@
                    clarity & Peace of mind for orthodontists.
                 </h1>
             </div>
-            <form id="headline-form" method="post" action="https://sync.appfluence.com/sync/handle_360_form">
-                <input name="name" type="text" placeholder="Your Name" required>
-                <input name="phone" type="text" placeholder="Your Phone" required>
-                <input name="email" type="text" placeholder="Your Email"  required>
-                <input name="formLocation" type="hidden" value="headline-form">
-                <input type="submit" value="Book A Demo">
-            </form>
         </section>
         <section id="middle">
            <h2 class="header" style="text-transform:capitalize">Take Control of Your Practice</h2>
@@ -646,19 +602,7 @@
             
             // adjust text onload
             adjustText();
-            
-            
-            // Headline Form Animation -----------------
-            
-            var headlineForm = document.querySelector('#headline-form');
-            
-            function showHeadlineForm(e) {
-            }
-            
-            window.addEventListener('scroll', showHeadlineForm)
-            document.addEventListener("DOMContentLoaded", function(e) {
-                setTimeout(showHeadlineForm, 1000);
-            });
+
             
             // Pop Out -------------------------------------
 
@@ -696,12 +640,10 @@
 
             function handleFormSubmit(e) {
                 //e.preventDefault();
-                
-                // This is just groundwork for form validation
-                var name = e.target['name'].value;
-                var bizName = e.target['bizName'].value;
-                var phone = e.target['phone'].value;
-                var email = e.target['email'].value;
+                var name = e.target['name'];
+                var bizName = e.target['bizName'];
+                var phone = e.target['phone'];
+                var email = e.target['email'];
                 var contactMethods = e.target['contact-method'];
                 var contactMethod = null;
                 for (var i = 0; i < contactMethods.length; i++) {
@@ -710,6 +652,11 @@
                   };  
                 };
                 // TODO: post form to server
+
+                // TODO: finish design thank you pages based on contactmethod
+                form.style.display = 'none';
+                header.textContent = 'Thank you!';
+                //contactMethod === 'Sue' ? : ;
 
             };
 

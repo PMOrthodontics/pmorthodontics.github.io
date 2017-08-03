@@ -142,12 +142,15 @@
             max-width: 1200px;
             box-shadow: 1px 1px 3px 1px grey;
         }
+        #nav .learn-more {
+            color:white;
+        }
         #top {
-            background: #1A4D93; 
+            background-color: #1A4D93; 
             color: white; 
             padding: 6em 0 6em 0;
             overflow:hidden;
-            background:url(flipped.jpg);
+            background:url(img/flipped.jpg);
             background-size:cover;
             background-position:right top
         }
@@ -363,9 +366,23 @@
             color: white;
             padding: 3em 0 3em 0;
         }
+        .wrapword{
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            white-space: pre-wrap;       /* css-3 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+            word-break: break-all;
+            white-space: normal;
+        }
         @media screen and (max-width: 1213px) {
             #headline-wrapper {
                 max-width:50%;
+            }
+            #headline-form {
+                top: 0px;
+                left:120px;
             }
         }
         @media screen and (max-width: 1196px) {
@@ -378,13 +395,21 @@
         }
         @media screen and (max-width: 1162px) {
             #headline-wrapper {
-                max-width:60%;
+                max-width:48%;
             }
             .header {
                 font-size: 2.5em;
             }
             .logo {
                 max-width:250px;
+            }
+        }
+        @media screen and (max-width: 1074px) {
+            #headline-form {
+                display:none;
+            }
+            #nav .learn-more {
+                display:block;
             }
         }
         @media screen and (max-width: 1003px) {
@@ -512,7 +537,7 @@
 </head>
 <body>
   
-   <!-- The Pop Out Form -->
+   <!-- Pop Out Form -->
    <div id="pop-out">
       <div id="x-pop-out">
           x
@@ -522,31 +547,29 @@
               <h2>360matrix // Learn More</h2>
           </div>
            <form id="pop-out-form" method="post" action="https://sync.appfluence.com/sync/handle_360_form">
-               <input name="name" placeholder="Your Name" type="text" />
-               <input name="bizName" placeholder="Practice Name" style="" type="text" />
+               <input name="name" placeholder="Your Name" type="text" required/>
+               <input name="bizName" placeholder="Practice Name" type="text" />
                <input name="phone" placeholder="Phone Number" type="text" />
-               <input name="email" placeholder="Practice Email" type="text" />
-               <input name="formLocation" type="hidden" value="pop-out-form">
+               <input name="email" placeholder="Practice Email" type="text" required/>
+               <input name="formLocation" value="pop-out-form" type="hidden">
                <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm local time)
+                   <input type="checkbox" name="contact-method" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm your local time)
                </div>
-              <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="YCBM"><span style="font-size:1rem;">I want to to book a time on Sue's calendar</span>
-               </div>
-               <input type="submit">
+               <input type="submit" value="Submit">
            </form>
            <div id="sue">
-               <img src="sue.png" />
+               <img src="img/sue.jpg" />
                <h3 style="margin: 28px;">Hi, I'm Sue!</h3>
                <p style="margin: 0 25px 0;">Thank you so much for your interest in 360Matrix. I look forward to speaking with you soon to show you how it can take your practice to the next level.</p>
            </div>
        </div>
    </div>
    
-   <!-- The Actual Site -->
-    <div id="site-container">
+    <!-- The Actual Website -->
+    <div id="site-container" style="">
         <section id="nav">
-            <img src="360logo.png" class="logo">
+            <img src="img/360logo.png" class="logo">
+<!--            <a href="#" class="learn-more">Learn More</a>-->
         </section>
         <section id="top">
             <div id="headline-wrapper">
@@ -584,7 +607,6 @@
             <h2 class="header">360Matrix Provides</h2>
             <ul class="horizontal">
                <li>
-                   <img />
                    <i class="fa fa-users" aria-hidden="true"></i>
                    <h3>Organizational Structure</h3>
                    <p>Team workflows are defined for your practice, providing a pathway and structure for team members to perform at the next level.</p>
@@ -646,19 +668,7 @@
             
             // adjust text onload
             adjustText();
-            
-            
-            // Headline Form Animation -----------------
-            
-            var headlineForm = document.querySelector('#headline-form');
-            
-            function showHeadlineForm(e) {
-            }
-            
-            window.addEventListener('scroll', showHeadlineForm)
-            document.addEventListener("DOMContentLoaded", function(e) {
-                setTimeout(showHeadlineForm, 1000);
-            });
+
             
             // Pop Out -------------------------------------
 
@@ -709,11 +719,9 @@
                     contactMethod = contactMethods[i].value;
                   };  
                 };
-                // TODO: post form to server
-
             };
 
-            form.addEventListener('submit', handleFormSubmit);
+            // form.addEventListener('submit', handleFormSubmit);
 
             // Responsive Text Switch ------------------------------
             
