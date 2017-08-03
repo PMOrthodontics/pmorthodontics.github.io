@@ -755,9 +755,16 @@
                 e.preventDefault();
                 popout.style.opacity = '0';
                 popout.style.zIndex = '-999';
-            }
-
-            xPopout.addEventListener('click', closePopout)
+            };
+            
+            function easyClosePopout(e) {
+                if (e.target === popout) {
+                    closePopout(e);
+                };
+            };
+            
+            popout.addEventListener('click', easyClosePopout);
+            xPopout.addEventListener('click', closePopout);
 
             window.addEventListener('keyup', function(e) {
                 if (e.key === 'Escape' && popout.style.opacity != 0) closePopout(e);
