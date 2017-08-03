@@ -425,6 +425,31 @@
             word-break: break-all;
             white-space: normal;
         }
+        .testimonial {
+            overflow: hidden;
+            width: 95%;
+            margin: auto;
+            margin-top: 3em;
+            -webkit-transition: all ease-in-out .2s;
+            -moz-transition: all ease-in-out .2s;
+            -o-transition: all ease-in-out .2s;
+            transition: .2s ease-in-out all;
+        }
+        .testimonial blockquote {
+            font-size: 1.3em;
+            line-height: 2;
+            float: left;
+            width: 88%;
+            margin-left: 50px;
+        }
+        .testimonial blockquote:before {
+            content: '\201c';
+            font-size: 4em;
+            float: left;
+            position: relative;
+            top: -72px;
+            left: -20px;
+        }
         @media screen and (max-width: 1213px) {
             #headline-wrapper {
                 max-width:50%;
@@ -701,7 +726,7 @@
                <li>
                    <i class="fa fa-mobile" aria-hidden="true"></i>
                    <h3>Mobile Ready</h3>
-                   <p>Know the ins-and-outs of your practice whether you are there for the day or 1,000 miles away.</p>
+                   <p>Know the ins-and-outs of your practice or multiple locations whether you are there for the day or 1,000 miles away.</p>
                </li>
                <li>
                    <i class="fa fa-desktop" aria-hidden="true"></i>
@@ -709,6 +734,14 @@
                    <p>Tasks and protocols are customized to your practice management software providing step-by-step instructions for Cloud9, Dolphin, Edge, and OrthoTrac.</p>
                </li>
             </ul>
+        </section>
+        <section id="testimonials">
+           <h2 class="header">People Are Saying</h2>
+            <div class="testimonial">
+                <blockquote>
+                    <p class="quote" style="margin:0 0 1em 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar libero a sagittis ullamcorper. In accumsan massa ac dapibus bibendum. <em> - Dr. No, Caymen Islands</em></p>
+                </blockquote>
+            </div>
         </section>
         <section id="cta" style="">
            <div class="text-and-button" >
@@ -842,6 +875,35 @@
             }
             
             window.addEventListener('resize', adjustPopout);
+            
+            // Testimonials ------------------------------------
+            
+            var testimonial = document.querySelector('.testimonial');
+            var quote = testimonial.querySelector('.quote');
+            var author = testimonial.querySelector('.author');
+            var testIndex = 0;
+            var testContent = [
+                {
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar libero a sagittis ullamcorper. In accumsan massa ac dapibus bibendum.',
+                    author: ' - Dr. No, Caymen Islands'
+                },                {
+                    text: 'Sed porta, velit vitae pretium vulputate, nibh felis efficitur neque, placerat interdum arcu nisi quis turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+                    author: ' - Erin Williams, Dallas, PA'
+                },
+            ];
+            
+            function changeTestimonial(e) {
+                testIndex++;
+                if (testIndex >= testContent.length) testIndex = 0;
+                testimonial.style.opacity = '0';
+                setTimeout(function(){
+                    var content = testContent[testIndex];
+                    quote.innerHTML = content.text + '<em>' + content.author + '</em>';
+                    testimonial.style.opacity = '1';
+                }, 200);
+            }
+            
+            setInterval(changeTestimonial, 7000);
         }());
     </script>
 </body>
