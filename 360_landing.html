@@ -450,6 +450,19 @@
             top: -72px;
             left: -20px;
         }
+        #banner h3 {
+            margin-left:10px;
+        }
+        .sue-icon {
+            border-radius: 100px;
+            margin-left: 2em;
+            position: relative;
+            width: 100px;
+            float: left;
+            top: -16px;
+            border: 2px solid white;
+            left: -13px;
+        }
         @media screen and (max-width: 1213px) {
             #headline-wrapper {
                 max-width:50%;
@@ -499,7 +512,7 @@
                 width: 65%;
             }
         }
-        @media screen and (max-width: 928px) {
+        @media screen and (max-width: 957px) {
             ul.horizontal li {
                 width: 80%;
                 margin-left: 10%;
@@ -518,11 +531,21 @@
                 margin-bottom: 1.5em;
                 max-width: none;
             }
+            #banner {
+                padding-bottom: 4em;
+                text-align: center;
+            }
+            #banner h3 {
+                margin-left:0px;
+            }
             .text-and-button a {
                 float:none;
             }
-            #banner {
-                padding-bottom: 4em;
+            .sue-icon {
+                float:none;
+                width:130px;
+                margin-left:0px;
+                position:static;
             }
         }
         @media screen and (max-width: 815px) {
@@ -642,7 +665,7 @@
            <div id="sue">
                <img src="img/sue.jpg" />
                <h3 style="margin: 28px;">Hi, I'm Sue!</h3>
-               <p style="margin: 0 25px 0;">Thank you so much for your interest in 360Matrix. I look forward to speaking with you soon to show you how it can take your practice to the next level.</p>
+               <p style="margin: 0 25px 0;">I'm an Orthodontics consultant with over 20 years experience. I created 360Matrix to help doctors achieve accountability, visibility, and peace of mind with their practice.</p>
            </div>
        </div>
    </div>
@@ -686,7 +709,8 @@
 <!--            <p class="announcement">Take it to the next level with 360 Performance coaching.</p>-->
         </section>
         <section id="banner">
-            <div class="text-and-button">
+            <img src="img/sue_icon.jpg" class="sue-icon"/>
+            <div class="text-and-button">      
                 <h3 style="margin-top:10px;">Want to schedule a demo?</h3>
                 <a href="#" class="learn-more" style="max-width:none;">Book A Call</a>
             </div>
@@ -735,7 +759,7 @@
                </li>
             </ul>
         </section>
-        <section id="testimonials">
+        <section id="testimonials" style="display:none;">
            <h2 class="header">People Are Saying</h2>
             <div class="testimonial">
                 <blockquote>
@@ -876,7 +900,7 @@
             
             window.addEventListener('resize', adjustPopout);
             
-            // Testimonials ------------------------------------
+            // Testimonials [NOT CURRENTLY USED] ------------------------------------
             
             var testimonial = document.querySelector('.testimonial');
             var quote = testimonial.querySelector('.quote');
@@ -903,7 +927,7 @@
                 }, 200);
             }
             
-            setInterval(changeTestimonial, 7000);
+//            setInterval(changeTestimonial, 7000);
         }());
     </script>
 </body>
