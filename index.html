@@ -165,6 +165,9 @@
             border-radius: 2px;
             width: 40%;
         }
+        #sue p {
+            margin: 0 25px 15px;
+        }
         #site-container {
             background: #fff;
             overflow: hidden;
@@ -415,6 +418,16 @@
             color: white;
             padding: 3em 0 3em 0;
         }
+        #footer {
+            background-color: #1A4D93;
+            color: white;
+            text-align: center;
+        }
+        #footer p {
+            margin:0;
+            padding-bottom: 15px;
+            font-size:14px;
+        }
         .wrapword{
             white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
             white-space: -pre-wrap;      /* Opera 4-6 */
@@ -427,7 +440,7 @@
         }
         .testimonial {
             overflow: hidden;
-            width: 95%;
+            width: 90%;
             margin: auto;
             margin-top: 3em;
             -webkit-transition: all ease-in-out .2s;
@@ -438,10 +451,9 @@
         .testimonial blockquote {
             font-size: 1.3em;
             line-height: 2;
-            float: left;
-            width: 88%;
-            margin-left: 50px;
+            margin:0;
         }
+/*
         .testimonial blockquote:before {
             content: '\201c';
             font-size: 4em;
@@ -449,6 +461,30 @@
             position: relative;
             top: -72px;
             left: -20px;
+        }
+*/
+        .quote {
+            margin: 0px 0 1em 0px;
+            width: 70%;
+            float: left;
+            padding-left: 5%;
+        }
+        .testimonial-author {
+            text-align: center;
+            width: 25%;
+            overflow: hidden;
+            float: left;
+            margin-left: 3%;
+        }
+        .testimonial-author img {
+            border-radius: 100px;
+            border: 3px solid #e3572a;
+            width:200px;
+        }
+        .testimonial-author span {
+            clear:left;
+            float:left;
+            line-height:1.5
         }
         #banner h3 {
             margin-left:10px;
@@ -498,6 +534,9 @@
             #nav .learn-more {
                 display:block;
             }
+            .quote {
+                padding-left:9%
+            }
         }
         @media screen and (max-width: 1003px) {
             .text-and-button a {
@@ -546,6 +585,17 @@
                 width:130px;
                 margin-left:0px;
                 position:static;
+            }
+            .testimonial-author {
+                float:none;
+                margin:auto;
+                margin-bottom:1.5em;
+                width:205px;
+            }
+            .quote {
+                padding-left:0;
+                width:90%;
+                margin-left:5%;
             }
         }
         @media screen and (max-width: 815px) {
@@ -627,6 +677,9 @@
             .text-and-button h3 {
                 font-size: 2em;
             }
+            .quote {
+                font-size:18px;
+            }
         }
         @media screen and (max-width: 600px) {
             .text-and-button a {
@@ -649,23 +702,25 @@
       </div>
        <div id="pop-out-box">
           <div id="pop-out-header">
-              <h2>360matrix // Learn More</h2>
+              <h2>360matrix - Learn More</h2>
           </div>
            <form id="pop-out-form" method="post" action="https://sync.appfluence.com/sync/handle_360_form">
                <input name="name" placeholder="Your Name" type="text" required/>
                <input name="bizName" placeholder="Practice Name" type="text" />
-               <input name="phone" placeholder="Phone Number" type="text" />
+               <input name="bizPhone" placeholder="Office Number" type="text" />
+               <input name="cellPhone" placeholder="Cell Number" type="text" />
                <input name="email" placeholder="Practice Email" type="text" required/>
                <input name="formLocation" value="pop-out-form" type="hidden">
                <div class="checkbox-wrapper">
-                   <input type="checkbox" name="contact-method" value="Sue">I want Sue to call me as soon as she's available (this call may come after hours up to 7:30pm your local time)
+                   <input type="checkbox" name="prefers-cellphone" value="yes">I prefer to be contacted by cell phone
                </div>
-               <input type="submit" value="Book My Call">
+               <input type="submit" value="Book Now">
            </form>
            <div id="sue">
                <img src="img/sue.jpg" />
-               <h3 style="margin: 28px;">Hi, I'm Sue!</h3>
-               <p style="margin: 0 25px 0;">I'm an Orthodontics consultant with over 20 years experience. I created 360Matrix to help doctors achieve accountability, visibility, and peace of mind with their practice.</p>
+               <h3 style="margin: 28px;">Hi, I'm Sue Hanen!</h3>
+               <p>I'm an Orthodontic Practice Management consultant with over 20 years experience with Impact360.</p> 
+               <p>360Matrix was created to help doctors achieve team accountability, clarity and peace of mind with their practice.</p>
            </div>
        </div>
    </div>
@@ -687,8 +742,20 @@
                 <input name="phone" type="text" placeholder="Your Phone" required>
                 <input name="email" type="text" placeholder="Your Email"  required>
                 <input name="formLocation" type="hidden" value="headline-form">
-                <input type="submit" value="Book A Demo">
+                <input type="submit" value="Learn More">
             </form>
+        </section>
+        <section id="testimonials">
+           <h2 class="header">What Orthodontists Are Saying</h2>
+            <div class="testimonial">
+                <blockquote>
+                    <div class="testimonial-author">
+                        <img src="img/testimonial_vinson_1.jpg"/>
+                        <span>Dr. Britt Vinson, Vinson Orthodontics</span>
+                    </div>
+                    <p class="quote">"360 matrix is a dynamic work flow that gives me the <strong>confidence and peace of mind</strong> that things are getting done. This is an effective way to communicate with an intuitive interface. When employees are absent for any reason, PM makes it possible for others to <strong>know what needs to be completed and how to follow through</strong> to completion."</p>
+                </blockquote>
+            </div>
         </section>
         <section id="middle">
            <h2 class="header" style="text-transform:capitalize">Take Control of Your Practice</h2>
@@ -709,10 +776,10 @@
 <!--            <p class="announcement">Take it to the next level with 360 Performance coaching.</p>-->
         </section>
         <section id="banner">
-            <img src="img/sue_icon.jpg" class="sue-icon"/>
+            <img src="https://sync.appfluence.com/static/img/sue_icon.jpg" class="sue-icon"/>
             <div class="text-and-button">      
                 <h3 style="margin-top:10px;">Want to schedule a demo?</h3>
-                <a href="#" class="learn-more" style="max-width:none;">Book A Call</a>
+                <a href="#" class="learn-more" style="max-width:none;">Book Now</a>
             </div>
 <!--
             <div style="display:block; text-align:center;">
@@ -759,19 +826,16 @@
                </li>
             </ul>
         </section>
-        <section id="testimonials" style="display:none;">
-           <h2 class="header">People Are Saying</h2>
-            <div class="testimonial">
-                <blockquote>
-                    <p class="quote" style="margin:0 0 1em 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar libero a sagittis ullamcorper. In accumsan massa ac dapibus bibendum. <em> - Dr. No, Caymen Islands</em></p>
-                </blockquote>
-            </div>
-        </section>
         <section id="cta" style="">
            <div class="text-and-button" >
                 <h3>Schedule a Demo Now</h3>
-                <a href="#" class="learn-more">Learn More</a>
+                <a href="#" class="learn-more">Book Now</a>
             </div>
+        </section>
+        <section id="footer">
+            <p>© 360Matrix<br />
+            22645 North 55th Street, Phoeniz, AZ 85054<br />
+            480-664-2468 or 877-360-0068</p>
         </section>
     </div>
     <script type="text/javascript"> // If you wonder why, it's because I am anti-loading frameworks (i.e. jQuery)
@@ -902,17 +966,21 @@
             
             // Testimonials [NOT CURRENTLY USED] ------------------------------------
             
+            // TODO: add support for switching the images
+            
             var testimonial = document.querySelector('.testimonial');
             var quote = testimonial.querySelector('.quote');
             var author = testimonial.querySelector('.author');
             var testIndex = 0;
             var testContent = [
                 {
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar libero a sagittis ullamcorper. In accumsan massa ac dapibus bibendum.',
-                    author: ' - Dr. No, Caymen Islands'
+                    html: '360 matrix is a dynamic work flow that gives me the <strong>confidence and peace of mind</strong> that things are getting done. This is an effective way to communicate with an intuitive interface. I love the fact that the important tasks are housed in one location. Additionally, when employees are absent for any reason, PM makes it possible for others to <strong>know what needs to be completed and how to follow through</strong> to completion. ',
+                    author: ' - Dr. Britt Vinson, Vinson Orthodontics',
+                    img: ''
                 },                {
-                    text: 'Sed porta, velit vitae pretium vulputate, nibh felis efficitur neque, placerat interdum arcu nisi quis turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
-                    author: ' - Erin Williams, Dallas, PA'
+                    html: 'Sed porta, velit vitae pretium vulputate, nibh felis efficitur neque, placerat interdum arcu nisi quis turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+                    author: ' - Erin Williams, Dallas, PA',
+                    img: ''
                 },
             ];
             
